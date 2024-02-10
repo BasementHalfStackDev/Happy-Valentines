@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #f0c0e0; /* Light pink background */
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 60%; /* Adjusts the gif size */
+            border-radius: 20px; /* Optional: Adds rounded corners to the gif */
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #e080a0; /* Button background color */
+            color: white; /* Button text color */
+        }
+        button:hover {
+            background-color: #c06080; /* Darker shade for hover effect */
+        }
+		#yesButton {
+			background-color: green;
+		}
+		#	noButton {
+			background-color: red;
+		}
+    </style>
+</head>
+<body>
+
+    <img id="cuteGif" src="cute-hearts.gif" alt="Cute Valentine's Gif">
+    <div>
+        <button id="yesButton" onclick="respond(true)">Yes</button>
+        <button id="noButton" onclick="respond(false)">No</button>
+    </div>
+
+    <script>
+        function respond(isYes) {
+            if (isYes) {
+				document.getElementById('yesButton').style.display = 'none';
+                document.getElementById('noButton').style.display = 'none';
+				document.getElementById('cuteGif').src = 'punydoll-dieticia-i.gif';
+				setTimeout(function() {
+					document.getElementById('cuteGif').src = 'ophelia-midnight-vtuber.gif';
+				}, 5000); // Delay of 5000 milliseconds (5 seconds)
+				setTimeout(function() {
+					document.getElementById('cuteGif').src = 'kisses-happy-valentines-day.gif';
+				}, 7500);
+            } else {
+				document.getElementById('noButton').style.display = 'none';
+				document.getElementById('cuteGif').src = 'rrane-battal.gif';
+				
+				// Use setTimeout to delay the alert
+				setTimeout(function() {
+					alert("That is not an option.");
+				}, 100); // Delay in milliseconds 
+            }
+        }
+    </script>
+
+</body>
+</html>
